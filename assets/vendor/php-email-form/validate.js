@@ -59,6 +59,12 @@
     const subject = thisForm.querySelector("#subject").value;
     const message = thisForm.querySelector("#message").value;
 
+    thisForm.querySelector(".loading").classList.remove("d-block");
+    thisForm.querySelector(".sent-message").classList.add("d-block");
+    thisForm.reset();
+
+    return 'OK';
+
     fetch(
       "https://colmena-admin-api.herokuapp.com/colmena-admin/v1/api/saveContacto",
       {
